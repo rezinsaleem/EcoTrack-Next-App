@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className="w-full md:w-1/2 mb-10 md:mb-0"
+          className="w-full md:w-1/2 mb-10 md:mb-0 mx-auto"
         >
           <ClientLottiePlayer src="/HeroAnimation.json" />
         </motion.div>
