@@ -2,13 +2,16 @@
 
 import { useState } from "react";
 import { z } from "zod";
+import { motion } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
   company: z.string().min(1, { message: "Company name is required" }),
   licenseType: z.string().min(1, { message: "Please select a license type" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters" }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters" }),
 });
 
 export default function ContactForm() {
@@ -100,7 +103,7 @@ export default function ContactForm() {
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
-            className= "bg-gradient-to-r from-red-500 to-red-700  text-white px-4 py-2 rounded hover:bg-red-800"
+            className="bg-gradient-to-r from-red-500 to-red-700  text-white px-4 py-2 rounded hover:bg-red-800"
           >
             Send Another Message
           </button>
@@ -112,15 +115,23 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-12 px-4">
       <div className="container mx-auto my-8">
-        <div className="text-center mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-10"
+        >
           <h2 className="text-3xl font-bold">Contact Us</h2>
           <p className="mt-4  max-w-2xl mx-auto">
             Have questions or ready to get started? Fill out the form below.
           </p>
-        </div>
+        </motion.div>
 
-        <form
+        <motion.form
           onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full max-w-3xl mx-auto p-6 bg-[#1a1a1a] border rounded-lg shadow-sm"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -201,7 +212,9 @@ export default function ContactForm() {
                 <option value="custom">Floating License</option>
               </select>
               {errors.licenseType && (
-                <p className="text-sm mt-1 text-red-500">{errors.licenseType}</p>
+                <p className="text-sm mt-1 text-red-500">
+                  {errors.licenseType}
+                </p>
               )}
             </div>
           </div>
@@ -235,7 +248,7 @@ export default function ContactForm() {
               {isSubmitting ? "Sending..." : "Submit"}
             </button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

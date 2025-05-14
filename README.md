@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SoftSell - Software Resale Landing Page 🚀
 
-## Getting Started
+This is a fully responsive, single-page marketing website built for **Credex Web Development Internship Assignment**. The fictional startup is named **SoftSell**, focused on reselling unused software licenses.
 
-First, run the development server:
+## 🌟 Objective
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+To build a marketing landing page that showcases features, workflow, testimonials, and a contact form — all within a modern, responsive design using relevant tools and best practices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion & Lottie
+- **Form Validation**: Zod + React Hook Form
+- **Icons**: Lucide React
+- **Deployment**: Vercel
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✅ Features Implemented
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🎯 Hero Section
+- Custom headline and subheading
+- CTA button: “Sell My Licenses”
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⚙️ How It Works
+- Three visual steps with icons:
+  1. Upload License
+  2. Get Valuation
+  3. Get Paid
 
-## Deploy on Vercel
+### 💡 Why Choose Us
+- Four feature tiles with icons and descriptions:
+  - Instant Valuation
+  - Verified Resellers
+  - Fast Payouts
+  - Secure & Trusted
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🗣️ Customer Testimonials
+- Two dummy reviews with name, role, and company
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📬 Contact / Lead Form
+- Fields: Name, Email, Company, License Type (dropdown), Message
+- Frontend validation using **Zod**
+
+---
+
+## 🎨 UI/UX Design Choices
+
+- Clean and modern layout using Tailwind CSS
+- Fully responsive (Mobile, Tablet, Desktop)
+- Smooth, engaging animations using Framer Motion
+- Lottie animation used to enhance visual storytelling
+- Coherent color palette and font stack
+- Accessible and semantic HTML
+
+---
+
+## 🧠 Additional Features (Bonus)
+
+- ✅ Logo placeholder and favicon
+- ✅ SEO meta tags and dynamic page title
+- ✅ Light/Dark mode toggle
+- ✅ Smooth animations and transitions
+- ✅ Responsive testimonial slider
+
+---
+
+## 🚀 Deployment
+
+Hosted on **Vercel**  
+🔗 [Live Preview](https://softsell-next-app.vercel.app/) 
+
+---
+
+## ⏱ Time Spent
+
+**Total Time Utilized:** ~12 hours
+
+- Initial setup and structure: 1.5 hrs
+- UI/UX and responsiveness: 4 hrs
+- Component building & layouting: 2.5 hrs
+- Animations (Framer Motion & Lottie): 2 hrs
+- Form setup + validation: 1.5 hrs
+- Polishing, SEO, and responsiveness checks: 0.5 hrs
+
+---
