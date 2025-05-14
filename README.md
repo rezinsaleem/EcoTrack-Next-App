@@ -47,6 +47,29 @@ To build a marketing landing page that showcases features, workflow, testimonial
 
 ---
 
+## 💬 Bonus: LLM-Powered Chat Feature
+
+To enhance user engagement and provide quick assistance, a **chat widget powered by LLM (Language Learning Model)** has been integrated into the landing page.
+
+### 🔧 Implementation Details
+
+- Developed a **clean and minimal chat widget UI** using Tailwind CSS and Lucide icons.
+- Supports **basic user input and assistant response interaction**.
+- Added support for **both real and mocked LLM responses**:
+  - **Real LLM**: Connected to OpenAI API using a free-tier API key.
+  - **Mocked LLM**: Fallback when request limits are exceeded or for demo purposes.
+- Example hardcoded prompt suggestions include:
+  - “How do I sell my license?”
+  - “Is SoftSell secure?”
+  - “Where can I check my payment status?”
+
+### 📁 Backend Location
+
+Chat logic and handler reside in:
+app/api/chat/route.js
+
+---
+
 ## 🎨 UI/UX Design Choices
 
 - Clean and modern layout using Tailwind CSS
@@ -77,7 +100,7 @@ Hosted on **Vercel**
 
 ## ⏱ Time Spent
 
-**Total Time Utilized:** ~12 hours
+**Total Time Utilized:** ~14 hours
 
 - Initial setup and structure: 1.5 hrs
 - UI/UX and responsiveness: 4 hrs
@@ -85,5 +108,22 @@ Hosted on **Vercel**
 - Animations (Framer Motion & Lottie): 2 hrs
 - Form setup + validation: 1.5 hrs
 - Polishing, SEO, and responsiveness checks: 0.5 hrs
+- Bonus LLM : 1 hrs
+- Final app checking : 1hrs
 
 ---
+
+## 🙌 Acknowledgements
+
+- Next js 
+- OpenAI for the GPT API
+- Framer Motion for smooth animations
+- LottieFiles for animations
+- Lucide Icons for beautiful SVGs
+- Tailwind CSS for rapid styling
+
+---
+
+## 📬 Contact
+
+Made with ❤️ by **Rezin Saleem V P**

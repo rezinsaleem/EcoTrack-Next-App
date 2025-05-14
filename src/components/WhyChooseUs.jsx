@@ -37,7 +37,6 @@ export default function WhyChooseUs() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
           className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -59,9 +58,8 @@ export default function WhyChooseUs() {
                 type: "spring",
                 stiffness: 60,
                 damping: 15,
-                delay: index * 0.15,
-              }}
-              viewport={{ once: true }}
+                delay: index * 0.1, // Adds a slight delay based on index
+              }} // Ensures the animation triggers when 30% of the element is in view
               className="flex flex-col items-center text-center p-6 rounded-lg border border-red-800 bg-card shadow-sm transition-all hover:shadow-md"
             >
               <div className="mb-4">{feature.icon}</div>

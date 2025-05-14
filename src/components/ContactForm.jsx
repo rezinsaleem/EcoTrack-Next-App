@@ -117,7 +117,7 @@ export default function ContactForm() {
       <div className="container mx-auto my-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-10"
         >
@@ -130,7 +130,7 @@ export default function ContactForm() {
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full max-w-3xl mx-auto p-6 bg-[#1a1a1a] border rounded-lg shadow-sm"
         >

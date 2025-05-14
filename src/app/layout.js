@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SoftSell",
+  title: "SoftSell - Your trusted platform for premium software deals.",
   description: "A platform for selling software and services",
   icons: {
     icon: "/softsell1.jpg",
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <ChatWidget/>
         <Footer />
       </body>
     </html>
