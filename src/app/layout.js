@@ -36,16 +36,26 @@ export const metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-       {/*  */}
+      {/*  */}
       <body
-       className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black dark:bg-black dark:text-white min-h-screen transition-colors duration-300`}
+        className={`
+    ${geistSans.variable} ${geistMono.variable}
+    antialiased bg-white text-black dark:bg-black dark:text-white
+    min-h-screen w-full overflow-x-hidden
+    transition-colors duration-300
+  `}
       >
         <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
