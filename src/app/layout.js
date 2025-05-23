@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,19 +14,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SoftSell - Your trusted platform for premium software deals.",
-  description: "A platform for selling software and services",
+  title: "EcoTrack - Home Energy Management Made Easy.",
+  description: "A platform for tracking and managing home energy consumption.",
+  keywords:
+    "home energy management, energy consumption, tracking, eco-friendly",
   icons: {
-    icon: "/softsell1.jpg",
+    icon: "/EcoTrack.jpg",
   },
   openGraph: {
-    title: "SoftSell",
-    description: "A platform for selling software and services",
+    title: "EcoTrack - Home Energy Management Made Easy.",
+    description:
+      "A platform for tracking and managing home energy consumption.",
     url: "",
-    siteName: "SoftSell",
+    siteName: "EcoTrack",
     images: [
       {
-        url: "/softsell1.jpg",
+        url: "/EcoTrack.jpg",
         width: 800,
         height: 600,
       },
@@ -44,19 +46,17 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       {/*  */}
       <body
         className={`
     ${geistSans.variable} ${geistMono.variable}
-    antialiased bg-white text-black dark:bg-black dark:text-white
+    antialiased bg-[#0f0f0f] text-gray-200
     min-h-screen w-full overflow-x-hidden
-    transition-colors duration-300
   `}
       >
         <Navbar />
         {children}
-        <ChatWidget/>
         <Footer />
       </body>
     </html>

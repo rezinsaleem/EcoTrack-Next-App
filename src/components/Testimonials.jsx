@@ -9,36 +9,39 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     name: "Abby Joe",
-    role: "Software Engineer",
-    company: "TechNova Inc.",
+    role: "Homeowner",
+    place: "Austin, TX",
     quote:
-      "Buying licenses has never been easier. Great support and genuine software every time.",
-    image: "/user4.jpg",
-  },
-  {
-    name: "Shikhavat",
-    role: "IT Consultant",
-    company: "SecureSoft",
-    quote:
-      "Quick delivery and trustworthy service. I recommend them to all my clients.",
+      "EcoTrack made monitoring my home energy simple and effective. The app helped me cut down on unnecessary usage.",
     image: "/user1.jpg",
   },
   {
+    name: "Shikhavat",
+    role: "Energy Advisor",
+    place: "San Francisco, CA",
+    quote:
+      "Thanks to EcoTrack’s real-time data, I guide clients to reduce energy waste and save on bills efficiently.",
+    image: "/user4.jpg",
+  },
+  {
     name: "Emma John",
-    role: "Freelancer",
-    company: "",
-    quote: "Instant delivery and smooth experience. They’ve earned my trust!",
+    role: "Smart Home User",
+    place: "Seattle, WA",
+    quote:
+      "I love EcoTrack’s alerts and Alexa integration. It’s a smart device every tech-savvy homeowner should have.",
     image: "/user3.jpg",
   },
   {
     name: "Alex Smith",
-    role: "Product Manager",
-    company: "Digitronix",
+    role: "Home Energy Manager",
+    place: "New York, NY",
     quote:
-      "Excellent service and real-time support. A go-to platform for genuine software.",
+      "EcoTrack’s integration and detailed reports make managing my home’s energy use much easier and smarter.",
     image: "/user2.jpg",
   },
 ];
+
+
 
 const Testimonials = () => {
   return (
@@ -48,7 +51,7 @@ const Testimonials = () => {
          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="dark:text-white text-black text-3xl md:text-[40px] sm:text-[30px] text-center font-semibold"
+          className="text-white  text-3xl md:text-[40px] sm:text-[30px] text-center font-semibold"
         >
           Testimonials
         </motion.h2>
@@ -110,10 +113,10 @@ const Testimonials = () => {
                 </h3>
                 <p className="text-sm text-gray-200">
                   {testimonial.role}
-                  {testimonial.company && (
+                  {testimonial.place && (
                     <>
                       {" "}
-                      — <span>{testimonial.company}</span>
+                      — <span>{testimonial.place}</span>
                     </>
                   )}
                 </p>

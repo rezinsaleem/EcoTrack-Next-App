@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
-  company: z.string().min(1, { message: "Company name is required" }),
-  licenseType: z.string().min(1, { message: "Please select a license type" }),
+  phone: z.string().min(7, { message: "Phone number is required" }),
+  productType: z.string().min(1, { message: "Please select a product type" }),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters" }),
@@ -18,8 +18,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    licenseType: "",
+    phone: "",
+    productType: "",
     message: "",
   });
 
@@ -50,8 +50,8 @@ export default function ContactForm() {
 
   const handleSelectChange = (e) => {
     const value = e.target.value;
-    setFormData((prev) => ({ ...prev, licenseType: value }));
-    validateField("licenseType", value);
+    setFormData((prev) => ({ ...prev, productType: value }));
+    validateField("productType", value);
   };
 
   const handleSubmit = (e) => {
@@ -82,8 +82,8 @@ export default function ContactForm() {
         setFormData({
           name: "",
           email: "",
-          company: "",
-          licenseType: "",
+          phone: "",
+          productType: "",
           message: "",
         });
       }, 1000);
@@ -98,12 +98,12 @@ export default function ContactForm() {
         <div className="text-center py-10">
           <div className="text-green-600 text-3xl mb-4">✔️</div>
           <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
-          <p className=" mb-6">
+          <p className="mb-6">
             Your message has been received. We’ll get back to you shortly.
           </p>
           <button
             onClick={() => setIsSubmitted(false)}
-            className="bg-gradient-to-r from-red-500 to-red-700  text-white px-4 py-2 rounded hover:bg-red-800"
+            className="bg-gradient-to-r from-green-500 to-green-700 text-white px-4 py-2 rounded hover:bg-green-800"
           >
             Send Another Message
           </button>
@@ -122,7 +122,7 @@ export default function ContactForm() {
           className="text-center mb-10"
         >
           <h2 className="text-3xl font-bold">Contact Us</h2>
-          <p className="mt-4  max-w-2xl mx-auto">
+          <p className="mt-4 max-w-2xl mx-auto">
             Have questions or ready to get started? Fill out the form below.
           </p>
         </motion.div>
@@ -137,16 +137,14 @@ export default function ContactForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name */}
             <div>
-              <label className="block mb-1 font-medium">
-                Name <span className="text-red-500">*</span>
-              </label>
+              <label className="block mb-1 font-medium">Name <span>*</span></label>
               <input
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
                 className={`w-full px-4 py-2 border rounded ${
-                  errors.name ? "border-red-500" : "border-gray-300"
+                  errors.name ? "border-gray-500" : "border-gray-300"
                 }`}
               />
               {errors.name && (
@@ -156,9 +154,7 @@ export default function ContactForm() {
 
             {/* Email */}
             <div>
-              <label className="block mb-1 font-medium">
-                Email <span className="text-red-500">*</span>
-              </label>
+              <label className="block mb-1 font-medium">Email <span>*</span></label>
               <input
                 name="email"
                 type="email"
@@ -166,7 +162,7 @@ export default function ContactForm() {
                 onChange={handleChange}
                 placeholder="your.email@example.com"
                 className={`w-full px-4 py-2 border rounded ${
-                  errors.email ? "border-red-500" : "border-gray-300"
+                  errors.email ? "border-gray-500" : "border-gray-300"
                 }`}
               />
               {errors.email && (
@@ -174,63 +170,55 @@ export default function ContactForm() {
               )}
             </div>
 
-            {/* Company */}
+            {/* Phone Number */}
             <div>
-              <label className="block mb-1 font-medium">
-                Company <span className="text-red-500">*</span>
-              </label>
+              <label className="block mb-1 font-medium">Phone Number <span>*</span></label>
               <input
-                name="company"
-                value={formData.company}
+                name="phone"
+                value={formData.phone}
                 onChange={handleChange}
-                placeholder="Company name"
+                placeholder="Your phone number"
                 className={`w-full px-4 py-2 border rounded ${
-                  errors.company ? "border-red-500" : "border-gray-300"
+                  errors.phone ? "border-gray-500" : "border-gray-300"
                 }`}
               />
-              {errors.company && (
-                <p className="text-sm mt-1 text-red-500">{errors.company}</p>
+              {errors.phone && (
+                <p className="text-sm mt-1 text-red-500">{errors.phone}</p>
               )}
             </div>
 
-            {/* License Type */}
+            {/* Product Type */}
             <div>
-              <label className="block mb-1 font-medium">
-                License Type <span className="text-red-500">*</span>
-              </label>
+              <label className="block mb-1 font-medium">Product Type <span>*</span></label>
               <select
-                value={formData.licenseType}
+                value={formData.productType}
                 onChange={handleSelectChange}
                 className={`w-full px-4 py-2 border rounded bg-[#1a1a1a] ${
-                  errors.licenseType ? "border-red-500" : "border-gray-300"
+                  errors.productType ? "border-gray-500" : "border-gray-300"
                 }`}
               >
-                <option value="">Select license type</option>
-                <option value="basic">Proprietary License</option>
-                <option value="professional">Subscription License</option>
-                <option value="enterprise">Freeware License</option>
-                <option value="custom">Floating License</option>
+                <option value="">Select product type</option>
+                <option value="solar">Solar</option>
+                <option value="smartmeters">Smart Meters</option>
+                <option value="oem">OEM</option>
+                <option value="smartplugs">Smart Plugs</option>
               </select>
-              {errors.licenseType && (
-                <p className="text-sm mt-1 text-red-500">
-                  {errors.licenseType}
-                </p>
+              {errors.productType && (
+                <p className="text-sm mt-1 text-red-500">{errors.productType}</p>
               )}
             </div>
           </div>
 
           {/* Message */}
           <div className="mt-6">
-            <label className="block mb-1 font-medium">
-              Message <span className="text-red-500">*</span>
-            </label>
+            <label className="block mb-1 font-medium">Message <span>*</span></label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us about your project or inquiry..."
               className={`w-full px-4 py-2 border rounded min-h-[120px] ${
-                errors.message ? "border-red-500" : "border-gray-300"
+                errors.message ? "border-gray-500" : "border-gray-300"
               }`}
             />
             {errors.message && (
@@ -238,12 +226,11 @@ export default function ContactForm() {
             )}
           </div>
 
-          {/* Submit */}
           <div className="mt-8">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full md:w-auto px-6 py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-red-800 disabled:opacity-50"
+              className="w-full md:w-auto px-6 py-2 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl disabled:opacity-50"
             >
               {isSubmitting ? "Sending..." : "Submit"}
             </button>

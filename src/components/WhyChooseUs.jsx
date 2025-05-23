@@ -1,34 +1,35 @@
 "use client";
-import { Award, Clock, Shield, Zap } from "lucide-react";
+import { Monitor, ChartPie, Bell, Home } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function WhyChooseUs() {
-  const features = [
-    {
-      icon: <Award className="h-10 w-10 text-primary" />,
-      title: "Quality Assurance",
-      description:
-        "We ensure every license we resell is 100% genuine, verified, and legally compliant.",
-    },
-    {
-      icon: <Clock className="h-10 w-10 text-primary" />,
-      title: "24/7 Support",
-      description:
-        "Round-the-clock customer service to assist you whenever you need help.",
-    },
-    {
-      icon: <Shield className="h-10 w-10 text-primary" />,
-      title: "Secure & Reliable",
-      description:
-        "Advanced security measures to protect your data and ensure reliable service.",
-    },
-    {
-      icon: <Zap className="h-10 w-10 text-primary" />,
-      title: "Fast Delivery",
-      description:
-        "Instant license delivery right after payment—no waiting, no delays.",
-    },
-  ];
+ const features = [
+  {
+    icon: <Monitor className="h-10 w-10 text-primary" />,
+    title: "Real-Time Energy Monitoring",
+    description:
+      "Track your home’s energy consumption live easily through our intuitive mobile app.",
+  },
+  {
+    icon: <ChartPie className="h-10 w-10 text-primary" />,
+    title: "Detailed Usage Reports",
+    description:
+      "Analyze detailed daily and monthly energy data to optimize your electricity use and save money.",
+  },
+  {
+    icon: <Bell className="h-10 w-10 text-primary" />,
+    title: "Smart Alerts & Notifications",
+    description:
+      "Receive instant notifications for unusual energy spikes or potential device issues promptly.",
+  },
+  {
+    icon: <Home className="h-10 w-10 text-primary" />,
+    title: "Seamless Smart Home Integration",
+    description:
+      "Works smoothly with Alexa, Google Home, and many other smart devices in your home.",
+  },
+];
+
 
   return (
     <section className="py-12 px-4 md:py-16 lg:py-20">
@@ -58,9 +59,9 @@ export default function WhyChooseUs() {
                 type: "spring",
                 stiffness: 60,
                 damping: 15,
-                delay: index * 0.1, // Adds a slight delay based on index
-              }} // Ensures the animation triggers when 30% of the element is in view
-              className="flex flex-col items-center text-center p-6 rounded-lg border border-red-800 bg-card shadow-sm transition-all hover:shadow-md"
+                delay: index * 0.1, 
+              }} 
+              className="flex flex-col items-center text-center p-6 rounded-lg border border-green-700 bg-card shadow-sm transition-all hover:shadow-md"
             >
               <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
