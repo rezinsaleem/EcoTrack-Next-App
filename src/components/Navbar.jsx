@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon } from "lucide-react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -24,7 +24,11 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
-
+        <div className="flex items-center md:hidden">
+          <button className="ml-2">
+            <Moon size={22} className="text-transparent" />
+          </button>
+        </div>
         <div className="hidden md:flex space-x-6 items-center">
           <Link
             href="#about"
