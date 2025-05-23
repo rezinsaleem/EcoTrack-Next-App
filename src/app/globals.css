@@ -32,3 +32,8 @@ body {
 .no-scrollbar {
   overflow: hidden;
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
