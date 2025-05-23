@@ -21,23 +21,8 @@ export const metadata = {
   icons: {
     icon: "/EcoTrack.jpg",
   },
-  openGraph: {
-    title: "EcoTrack - Home Energy Management Made Easy.",
-    description:
-      "A platform for tracking and managing home energy consumption.",
-    url: "",
-    siteName: "EcoTrack",
-    images: [
-      {
-        url: "/EcoTrack.jpg",
-        width: 800,
-        height: 600,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
 };
+
 
 export const viewport = {
   width: "device-width",
